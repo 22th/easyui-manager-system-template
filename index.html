@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Complex Layout - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="./libs/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="./libs/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="./libs/easyui/themes/color.css">
+    <script type="text/javascript" src="./libs/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="./libs/easyui/jquery.easyui.min.js"></script>
+</head>
+<body>
+<!-- easyui布局,宽高自适应 -->
+<div id="cc" class="easyui-layout" data-options="fit:true">
+
+    <!-- header -->
+    <div data-options="region:'north'" style="height:80px">
+        <div class="easyui-layout" data-options="fit:true,border:false">
+            <!-- Logo -->
+            <div data-options="region:'west',border:false" style="width:200px">
+                Logo
+            </div>
+
+            <!-- main-menu -->
+            <div data-options="region:'center',border:false">
+                <div style="line-height: 80px;">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" style="width:65px" data-options="iconCls:'icon-large-picture',size:'large',iconAlign:'top'">Picture</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" style="width:65px" data-options="iconCls:'icon-large-shapes',size:'large',iconAlign:'top'">Shapes</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" style="width:65px" data-options="iconCls:'icon-large-smartart',size:'large',iconAlign:'top'">SmartArt</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" style="width:65px" data-options="iconCls:'icon-large-chart',size:'large',iconAlign:'top'">Chart</a>
+                </div>
+            </div>
+
+            <!-- ucenter -->
+            <div data-options="region:'east',border:false" style="width: 100px">
+                User Center
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div data-options="region:'south',split:true" style="height:50px;">
+        <p style="text-align: center;">
+            © 2016 Ryan Ding(丁小江). All rights reserved.
+        </p>
+    </div>
+
+    <!-- shortcut-menu begin -->
+    <div data-options="region:'east',split:true" title="快捷菜单" style="width:100px; background-color: #E0ECFF;">
+        <div style="padding: 2px;">
+            <a href="javascript:void(0)" class="easyui-linkbutton c4" style="width:100%;margin-top: 2px;" data-options="size:'small'">Menu1</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton c4" style="width:100%;margin-top: 2px;" data-options="size:'small'">Menu1</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton c4" style="width:100%;margin-top: 2px;" data-options="size:'small'">Menu1</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton c4" style="width:100%;margin-top: 2px;" data-options="size:'small'">Menu1</a>
+        </div>
+    </div>
+
+    <!-- sub-menu -->
+    <div data-options="region:'west',split:true" title="二级菜单" style="width:200px;">
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div title="Title1" style="padding:10px;">
+                content1
+            </div>
+            <div title="Title2" data-options="selected:true" style="padding:10px;">
+                content2
+            </div>
+            <div title="Title3" style="padding:10px">
+                content3
+            </div>
+        </div>
+    </div>
+
+    <!-- content layout -->
+    <div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+        <div class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+            <div title="About" data-options="href:'_content.html'" style="padding:10px"></div>
+            <div title="DataGrid" style="padding:5px">
+                <table class="easyui-datagrid"
+                       data-options="url:'datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
+                    <thead>
+                    <tr>
+                        <th data-options="field:'itemid'" width="80">Item ID</th>
+                        <th data-options="field:'productid'" width="100">Product ID</th>
+                        <th data-options="field:'listprice',align:'right'" width="80">List Price</th>
+                        <th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
+                        <th data-options="field:'attr1'" width="150">Attribute</th>
+                        <th data-options="field:'status',align:'center'" width="50">Status</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
